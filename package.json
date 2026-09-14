@@ -1,0 +1,21 @@
+{
+  "name": "kafka-one-stop-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Apache Kafka theory + Node.js implementation lab with KRaft, consumer groups, testing and production guidance.",
+  "scripts": {
+    "topic:create": "node src/admin.js",
+    "producer": "node src/producer.js",
+    "producer:demo": "node src/producer.js --demo 12",
+    "consumer:group1:a": "node src/consumer.js group1 consumer-a",
+    "consumer:group1:b": "node src/consumer.js group1 consumer-b",
+    "consumer:group2": "node src/consumer.js group2 analytics-a",
+    "test:integration": "node --test test/kafka.integration.test.js",
+    "check": "node --check src/config.js && node --check src/client.js && node --check src/admin.js && node --check src/producer.js && node --check src/consumer.js && node --check test/kafka.integration.test.js"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "kafkajs": "^2.2.4"
+  }
+}
